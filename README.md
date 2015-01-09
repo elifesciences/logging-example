@@ -7,7 +7,7 @@ programs and the bits are extracted, used in calculations, stored, etc.
 
 Many applications with many different logging formats means more work for me. 
 
-__KISS__
+[__KISS__](http://en.wikipedia.org/wiki/KISS_principle)
 
 ## notes
 
