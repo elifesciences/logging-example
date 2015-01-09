@@ -2,6 +2,8 @@
 
 Demonstrates the preferred log format for eLife applications written in Python.
 
+__TL;DR__: `%(created)f - %(levelname)s - %(processName)s - %(name)s - %(message)s`
+
 _Why be so formal about this?_ These log files are eventually parsed by other 
 programs and the bits are extracted, used in calculations, stored, etc. 
 
