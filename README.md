@@ -11,8 +11,7 @@ Many applications with many different logging formats means more work for me.
 
 ### misc
 
-Python docs for the `logging` module can be found here:
-https://docs.python.org/2/library/logging.html
+Python docs for the `logging` module are here: https://docs.python.org/2/library/logging.html
 
 I use Unix time `%(created)f` rather than the `YMD` format because Unix time 
 is used natively by [Riemann](http://riemann.io) (our realtime monitor).
