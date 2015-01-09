@@ -30,7 +30,7 @@ h2.setFormatter(FORMAT)
 # outputs *everything* to a seperate file, good for debugging during dev
 h3 = logging.FileHandler(DEV_LOGFILE)
 # h3.setLevel(logging.DEBUG) # not neccessary as the root logger outputs at DEBUG
-h3.setFormatter(DEV_FORMAT) # for dev you might want a friendlier or more indepth logging format
+h3.setFormatter(DEV_FORMAT) # for dev you might want a friendlier logging format
 
 logger.addHandler(h)
 logger.addHandler(h2)
