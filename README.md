@@ -9,7 +9,10 @@ Many applications with many different logging formats means more work for me.
 
 [__KISS__](http://en.wikipedia.org/wiki/KISS_principle)
 
-* Python docs for the `logging` module can be found here:
+### misc
+
+Python docs for the `logging` module can be found here:
 https://docs.python.org/2/library/logging.html
-* I use Unix time `%(created)f` rather than the `YMD` format because Unix time 
+
+I use Unix time `%(created)f` rather than the `YMD` format because Unix time 
 is used natively by [Riemann](http://riemann.io) (our realtime monitor).
