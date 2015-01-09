@@ -1,6 +1,6 @@
 # Logging example in Python
 
-Demonstrates the preferred log format for eLife applications written in Python.
+Demonstrates the preferred log format for eLife applications written in Python:
 
 `%(created)f - %(levelname)s - %(processName)s - %(name)s - %(message)s`
 
