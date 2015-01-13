@@ -4,7 +4,7 @@ The preferred log format for eLife applications.
 
 `<timestamp> - <log level> - <process name> - <program section> - <message>`
 
-_Why be so formal about this?_ These log files are eventually parsed by other 
+__Why be so formal about this?__ These log files are eventually parsed by other 
 programs and the bits are extracted, used in calculations, stored, etc. 
 
 Many applications with many different logging formats means more work for me. 
