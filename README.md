@@ -4,6 +4,12 @@ The preferred log format for eLife applications.
 
 `<timestamp> - <log level> - <process name> - <program section> - <message>`
 
+_Why be so formal about this?_ These log files are eventually parsed by other 
+programs and the bits are extracted, used in calculations, stored, etc. 
+
+Many applications with many different logging formats means more work for me. 
+[__KISS__](http://en.wikipedia.org/wiki/KISS_principle)
+
 Examples:
 
 * `1420811950.9472651 - DEBUG - elife-api - somemodule.py - a message goes here`
@@ -23,13 +29,6 @@ __process name__: name of the running program
 __program section__: where in the program this log entry originated.
 
 __message__: a free form message; may include hyphens; avoid line breaks.
-
-_Why be so formal about this?_ These log files are eventually parsed by other 
-programs and the bits are extracted, used in calculations, stored, etc. 
-
-Many applications with many different logging formats means more work for me. 
-
-[__KISS__](http://en.wikipedia.org/wiki/KISS_principle)
 
 ## Python
 
