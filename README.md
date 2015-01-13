@@ -13,7 +13,8 @@ Examples:
 * `1420811950.9472651 - CRITICAL - bar - somemodule.py - a message goes here`
 * `1420811950 - INFO - baz - somemodule.py - a message goes here`
 
-__timestamp__: the time in seconds since the epoch as a floating point number.
+__timestamp__: the time in seconds since the epoch as a floating point or integer 
+number.
 
 __log level__: one of DEBUG, INFO, WARN, ERROR or CRITICAL
 
