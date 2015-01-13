@@ -2,7 +2,7 @@
 
 The preferred log format for eLife applications.
 
-`<timestamp> - <DEBUG|INFO|WARN|ERROR|CRITICAL> - <process name> - <program section> - <message>`
+`<timestamp> - <log level> - <process name> - <program section> - <message>`
 
 Examples:
 
