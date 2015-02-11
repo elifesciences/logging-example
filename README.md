@@ -69,11 +69,11 @@ __INFO__ is the default level for all applications in production.
 __DEBUG__ log statements are discarded by monitoring applications and will not 
 be stored.
 
-All _application_ log messages sent to the monitoring server will be kept for 
+All __application__ log messages sent to the monitoring server will be kept for 
 __12 months__. This is _entirely arbitrary_ and handled by the `logrotate` 
 application.
 
-All _audit_ log messages sent to the monitoring server will be kept 
+All __audit__ log messages sent to the monitoring server will be kept 
 __indefinitely__, or, as long as some business rule tells us. This rule will be 
 encapsulated entirely within code.
 
