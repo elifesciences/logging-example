@@ -62,12 +62,12 @@ can and keep it around forever?
 All other reasons derive from this one. If logging data is not used then it's 
 just noise.
 
+## retention
+
 __INFO__ is the default level for all applications in production. 
 
 __DEBUG__ log statements are discarded by monitoring applications and will not 
 be stored.
-
-## retention
 
 All _application_ log messages sent to the monitoring server will be kept for 
 __12 months__. This is _entirely arbitrary_ and handled by the `logrotate` 
