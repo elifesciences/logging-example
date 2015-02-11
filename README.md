@@ -97,3 +97,12 @@ Logging for an S3 bucket should only be enabled if:
 
 All S3 access logs should go to the logging bucket `elife-log-data` with the 
 name of the originating bucket as the prefix.
+
+For example, if the S3 bucket "elife-annual-2012" require access logging, the
+'target bucket' will be `elife-log-data` and the 'target prefix' will be 
+`elife-annual-2012/`.
+
+![S3 logging example](s3-logging-example.png)
+
+
+
