@@ -70,7 +70,7 @@ __DEBUG__ log statements are discarded by monitoring applications and will not
 be stored.
 
 All __application__ log messages sent to the monitoring server will be kept for 
-__12 months__. This is _entirely arbitrary_ and handled by the `logrotate` 
+__6 months__. This is _entirely arbitrary_ and handled by the `logrotate` 
 application.
 
 All __audit__ log messages sent to the monitoring server will be kept 
