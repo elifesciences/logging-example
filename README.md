@@ -22,11 +22,11 @@ Examples:
 __timestamp__: the time in seconds since the epoch as a floating point or integer 
 number.
 
-__log level__: one of DEBUG, INFO, WARN, ERROR or CRITICAL
+__log level__: one of DEBUG, INFO, WARN, ERROR or CRITICAL.
 
-__process name__: name of the running program
+__process name__: name of the running program/process.
 
-__program section__: where in the program this log entry originated.
+__program section__: where within the application this log entry originated.
 
 __message__: a free form message; may include hyphens; avoid line breaks.
 
@@ -42,6 +42,36 @@ The included example can be run with:
 
 Python docs for the `logging` module are here: 
 https://docs.python.org/2/library/logging.html#logrecord-attributes
+
+## PHP+Monolog
+
+The below custom formatter coerces some of the naming of the original record to
+familiar values and converts the date to a Unix timestamp (sans microseconds):
+
+    function el_format_record(array $record) {
+        return array(
+            "timestamp" => date_timestamp_get($record['datetime']),
+            "log_level" => $record['level_name'],
+            "process" => $record['channel'],
+            "section" => __FILE__,
+            "message" => $record['message'],
+            "context" => $record['context'],
+        );
+    }
+
+    class eLifeJsonFormatter extends Monolog\Formatter\JsonFormatter {
+        public function format(array $record) {
+            return parent::format(el_format_record($record));
+        }
+
+        public function formatBatch(array $records) {
+            $records = array_map('el_format_record', $records);
+            return parent::formatBatch($records);
+        }
+    }
+
+
+See the [php example](php/logging.php) for usage.
 
 ## Javascript
 
