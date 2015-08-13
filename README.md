@@ -30,6 +30,29 @@ __program section__: where within the application this log entry originated.
 
 __message__: a free form message; may include hyphens; avoid line breaks.
 
+## Structure
+
+If your application and preferred logging library can handle it easily, please 
+use JSON with the following keys:
+
+```json
+{"timestamp": ..., "log_level": ..., "process": ..., "section": ..., "message": ..., "context": {...}}```
+
+With `__context__` being a simple map of additional key+values. An empty context can be either an empty list or an empty map (because of the nature of PHP's keyed arrays).
+
+Examples:
+
+```json
+{"timestamp":1439482969,"log_level":"ERROR","process":"example-app","section":"\/srv\/ingestor\/web\/logging.php","message":"this is an error"}
+
+{"timestamp":1439482969,"log_level":"ERROR","process":"example-app","section":"\/srv\/ingestor\/web\/logging.php","message":"this is an error", "context": []}
+
+{"timestamp":1439482969,"log_level":"ERROR","process":"example-app","section":"\/srv\/ingestor\/web\/logging.php","message":"this is an error", "context": {}}
+
+{"timestamp":1439482969,"log_level":"ERROR","process":"example-app","section":"\/srv\/ingestor\/web\/logging.php","message":"this is an error", "context": {"key": "val"}}
+
+```
+
 ## Python
 
 Use this formatter:
