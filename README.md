@@ -48,28 +48,29 @@ https://docs.python.org/2/library/logging.html#logrecord-attributes
 The below custom formatter coerces some of the naming of the original record to
 familiar values and converts the date to a Unix timestamp (sans microseconds):
 
-    function el_format_record(array $record) {
-        return array(
-            "timestamp" => date_timestamp_get($record['datetime']),
-            "log_level" => $record['level_name'],
-            "process" => $record['channel'],
-            "section" => __FILE__,
-            "message" => $record['message'],
-            "context" => $record['context'],
-        );
+```php
+function el_format_record(array $record) {
+    return array(
+        "timestamp" => date_timestamp_get($record['datetime']),
+        "log_level" => $record['level_name'],
+        "process" => $record['channel'],
+        "section" => __FILE__,
+        "message" => $record['message'],
+        "context" => $record['context'],
+    );
+}
+
+class eLifeJsonFormatter extends Monolog\Formatter\JsonFormatter {
+    public function format(array $record) {
+        return parent::format(el_format_record($record));
     }
 
-    class eLifeJsonFormatter extends Monolog\Formatter\JsonFormatter {
-        public function format(array $record) {
-            return parent::format(el_format_record($record));
-        }
-
-        public function formatBatch(array $records) {
-            $records = array_map('el_format_record', $records);
-            return parent::formatBatch($records);
-        }
+    public function formatBatch(array $records) {
+        $records = array_map('el_format_record', $records);
+        return parent::formatBatch($records);
     }
-
+}
+```
 
 See the [php example](php/logging.php) for usage.
 
